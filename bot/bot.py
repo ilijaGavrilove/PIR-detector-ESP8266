@@ -8,6 +8,7 @@ from aiogram.types import Message
 from bot.config import BOT_TOKEN
 from database import db_requests
 
+bot = Bot(token=BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 dp = Dispatcher()
 
 @dp.message(CommandStart())
@@ -104,7 +105,6 @@ async def wrong_input_handler(message: Message) -> None:
 
 
 async def main() -> None:
-    bot = Bot(token=BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     await dp.start_polling(bot)
 
 

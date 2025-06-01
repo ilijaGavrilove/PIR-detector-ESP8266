@@ -121,8 +121,35 @@ def get_last_detector_id():
     con.close()
     return result
 
+def find_user_by_detector_id(id):
+    con = sqlite3.connect(DB_PATH)
+    cursor = con.cursor()
 
+    cursor.execute(f"""
+    SELECT user_id FROM detectors
+    WHERE id = {id}
+    """)
 
-if __name__ == "__main__":
+    result = cursor.fetchall()[-1][0]
+    if not result:
+        raise Exception
+    con.close()
+    return result
+
+def find_name_by_detector_id(id):
+    con = sqlite3.connect(DB_PATH)
+    cursor = con.cursor()
+
+    cursor.execute(f"""
+        SELECT name FROM detectors
+        WHERE id = {id}
+        """)
+
+    result = cursor.fetchall()[-1][0]
+    if not result:
+        raise Exception
+    con.close()
+    return result
+
+if __name__ == '__main__':
     create_table()
-    select_all()

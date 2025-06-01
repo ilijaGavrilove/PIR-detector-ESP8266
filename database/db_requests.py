@@ -120,9 +120,3 @@ def get_last_detector_id():
     result = cursor.fetchall()[-1][0]
     con.close()
     return result
-
-
-
-if __name__ == "__main__":
-    create_table()
-    select_all()

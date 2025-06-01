@@ -36,7 +36,6 @@ void loop() {
       Serial.println("Движение обнаружено! Отправка данных...");
       
       DynamicJsonDocument doc(256);
-      doc["motion"] = true;
       doc["device_id"] = deviceId;
       
       String jsonData;

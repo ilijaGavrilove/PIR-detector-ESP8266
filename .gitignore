@@ -1,0 +1,5 @@
+.venv
+bot/config.py
+database/config.py
+.gitignore
+database/detectors.db

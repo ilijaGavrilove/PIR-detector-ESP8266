@@ -5,7 +5,6 @@
 const char* ssid = "ВАШ_WIFI_SSID";
 const char* password = "ВАШ_WIFI_ПАРОЛЬ";
 const char* serverUrl = "http://192.168.1.100:5000"; 
-const char* getEndpoint = "/get_id";                 
 const char* motionEndpoint = "/motion";
 const int motionSensorPin = D1; 
 unsigned long lastDetectionTime = 0;

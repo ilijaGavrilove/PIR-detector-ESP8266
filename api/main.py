@@ -19,12 +19,3 @@ async def user_alert(alert: AlertRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-
-@app.get("/get_id")
-async def send_id():
-    response = [
-        {
-            "id": get_last_detector_id()
-        }
-    ]
-    return response
